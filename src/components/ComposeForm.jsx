@@ -1,16 +1,23 @@
+import PropTypes from 'prop-types';
 import { useState } from "react";
 import Avatar from "./Avatar";
 import './ComposeForm.css';
 
 function ComposeForm() {
     const [editorValue, setEditorValue] = useState('');
-    console.log(editorValue);
+    
     const handleEditorValueChange = (e) => {
         setEditorValue(e.target.value);
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onsubmit(editorValue);
+        setEditorValue('');
+    }
+
     return (
-        <form className="compose-form">
+        <form className="compose-form" onSubmit={handleSubmit}>
             <div className="compose-form-container">
                 <Avatar />
                 <textarea
@@ -23,6 +30,10 @@ function ComposeForm() {
             <button className="compose-form-submit">Tweet</button>
         </form>
     )
+}
+
+ComposeForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
 }
 
 export default ComposeForm;
