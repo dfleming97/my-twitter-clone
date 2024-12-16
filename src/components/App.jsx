@@ -2,9 +2,15 @@ import tweets from '../tweets.json';
 
 function App() {
     return (
-        <div>
-            {tweets.map((tweet) => (
-                <span>tweet.content</span>
+        <div className='timeline'>
+            {tweets.map(({ id, user, created_on, content }) => (
+                <div key={id} className='tweet'>
+                    <div className='tweet-header'>
+                        <span className='tweet-user'>@{user}</span> ·{' '}
+                        <span className='tweet-created-on'>{created_on}</span>
+                    </div>
+                    <div className='tweet-content'>{content}</div>
+                </div>
             ))}
         </div>
     )
