@@ -3,7 +3,7 @@ import { useState } from "react";
 import Avatar from "./Avatar";
 import './ComposeForm.css';
 
-function ComposeForm() {
+function ComposeForm({ onSubmit }) {
     const [editorValue, setEditorValue] = useState('');
     
     const handleEditorValueChange = (e) => {
@@ -12,7 +12,7 @@ function ComposeForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onsubmit(editorValue);
+        onSubmit(editorValue);
         setEditorValue('');
     }
 
