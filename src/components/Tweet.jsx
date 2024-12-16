@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Tweet(props) {
     const { user, createdOn, children } = props;
 
@@ -10,6 +12,11 @@ function Tweet(props) {
             <div className="tweet-content">{children}</div>
         </div>
     )
+}
+
+Tweet.propTypes = {
+    user: PropTypes.string,
+    createdOn: PropTypes.string,
 }
 
 export default Tweet;
