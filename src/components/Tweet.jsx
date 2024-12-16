@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './Tweet.css';
 
 function Tweet(props) {
     const { user, createdOn, children } = props;
