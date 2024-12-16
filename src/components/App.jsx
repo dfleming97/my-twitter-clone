@@ -5,7 +5,7 @@ function App() {
     return (
         <div className='timeline'>
             {tweets.map(({ id, user, created_on, content }) => (
-                <Tweet key={id} user={user} created_on={created_on}>
+                <Tweet key={id} user={user} createdOn={created_on}>
                     {content}
                 </Tweet>
             ))}
