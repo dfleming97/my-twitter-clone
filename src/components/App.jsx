@@ -1,14 +1,18 @@
+import ComposeForm from './ComposeForm';
+import Timeline from './Timeline';
+import { FaXRay } from 'react-icons/fa';
+import './App.css';
+
 import tweets from '../tweets.json';
-import Tweet from './Tweet';
+
 
 function App() {
     return (
-        <div className='timeline'>
-            {tweets.map(({ id, user, created_on, content }) => (
-                <Tweet key={id} user={user} createdOn={created_on}>
-                    {content}
-                </Tweet>
-            ))}
+        <div className='app'>
+            <FaXRay className='app-logo' size="2em" />
+            <ComposeForm />
+           <div className='separator'></div>
+           <Timeline tweets={tweets} />
         </div>
     )
 }
